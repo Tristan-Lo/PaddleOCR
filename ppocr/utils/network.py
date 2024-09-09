@@ -65,7 +65,7 @@ def _download(url, save_path):
             )
 
         try:
-            req = requests.get(url, stream=True)
+            req = requests.get(url, stream=True, verify=False)
         except Exception as e:  # requests.exceptions.ConnectionError
             logger.info(
                 "Downloading {} from {} failed {} times with exception {}".format(
